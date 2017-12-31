@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.rovio.Nibblers" platformBuildVersionCode="25" platformBuildVersionName="7.1.1">
+    <permission android:name="com.rovio.Nibblers.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.android.vending.BILLING"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <supports-screens android:largeScreens="true" android:normalScreens="true" android:smallScreens="false" android:xlargeScreens="true"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <application android:debuggable="false" android:hardwareAccelerated="true" android:icon="@drawable/icon" android:label="@string/app_name" android:name="android.support.multidex.MultiDexApplication">
+        <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize" android:launchMode="singleTask" android:name="com.rovio.fusion.App" android:screenOrientation="userPortrait" android:theme="@style/Theme.AppCompat.NoActionBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <meta-data android:name="com.sec.android.airview.enable" android:value="true"/>
+            <intent-filter>
+                <action android:name="com.sec.android.airview.HOVER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="com.rovio.Nibblers-1.22.3"/>
+                <data android:scheme="com.rovio.Nibblers"/>
+                <data android:scheme="roviochannel"/>
+            </intent-filter>
+        </activity>
+        <meta-data android:name="buildNumber" android:value="1223019302"/>
+        <service android:name="com.rovio.fusion.payment.google.BillingService"/>
+        <receiver android:name="com.rovio.fusion.payment.google.BillingReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.billing.IN_APP_NOTIFY"/>
+                <action android:name="com.android.vending.billing.RESPONSE_CODE"/>
+                <action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="orientation|screenSize" android:name="com.applovin.adview.AppLovinInterstitialActivity"/>
+        <activity android:name="com.applovin.adview.AppLovinConfirmationActivity"/>
+        <meta-data android:name="applovin.sdk.key" android:value="K3bKSoSlrtVxySkqaZuT3Hx1Mx9I2hkNlJhB69xx0QsyuanS8f_CxxEHsNav3JGpdz-k6we7KV4D4rfDVfQQae"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:hardwareAccelerated="true" android:name="com.unity3d.ads.adunit.AdUnitActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="fontScale|keyboard|keyboardHidden|locale|mcc|mnc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|touchscreen|uiMode" android:hardwareAccelerated="false" android:name="com.unity3d.ads.adunit.AdUnitSoftwareActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:label="@string/contact_fragment_title" android:name="com.zendesk.sdk.feedback.ui.ContactZendeskActivity" android:screenOrientation="behind" android:theme="@style/ZendeskSdkTheme.Light" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:label="@string/contact_fragment_title" android:name="com.zendesk.sdk.requests.ViewRequestActivity" android:screenOrientation="behind" android:theme="@style/ZendeskSdkTheme.Light" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:label="@string/request_list_activity_title" android:name="com.zendesk.sdk.requests.RequestActivity" android:screenOrientation="behind" android:theme="@style/ZendeskSdkTheme.Light"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:label="@string/support_activity_title" android:name="com.zendesk.sdk.support.SupportActivity" android:screenOrientation="behind" android:theme="@style/ZendeskSdkTheme.Light" android:windowSoftInputMode="adjustResize"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.zendesk.sdk.support.ViewArticleActivity" android:screenOrientation="behind" android:theme="@style/ZendeskSdkTheme.Light"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.rovio.zendesk.CustomRequestListActivity" android:screenOrientation="behind" android:theme="@style/ZendeskSdkTheme.Light"/>
+        <receiver android:exported="true" android:name="com.rovio.irr.MyInstallReferrerReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.facebook.ads.AudienceNetworkActivity"/>
+        <activity android:name="net.hockeyapp.android.UpdateActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.vungle.publisher.VideoFullScreenAdActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.vungle.publisher.MraidFullScreenAdActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.adcolony.sdk.AdColonyInterstitialActivity"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:hardwareAccelerated="true" android:name="com.adcolony.sdk.AdColonyAdViewActivity"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+        <meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/app_id"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <receiver android:name="com.rovio.fusion.FusionGCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.rovio.Nibblers"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.rovio.fusion.LocalNotificationsWrapper"/>
+        <service android:name="com.rovio.fusion.GCMIntentService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.rovio.fusion.VideoPlayerActivity" android:screenOrientation="landscape" android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity" android:theme="@style/Theme.IAPTheme"/>
+        <activity android:exported="true" android:name="com.facebook.CustomTabActivity"/>
+        <activity android:name="com.facebook.CustomTabMainActivity"/>
+        <receiver android:name="com.zendesk.sdk.power.BatteryStateBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_LOW"/>
+                <action android:name="android.intent.action.BATTERY_OKAY"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.zendesk.sdk.deeplinking.ZendeskDeepLinkingBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.zendesk.sdk.deeplinking"/>
+            </intent-filter>
+        </receiver>
+        <provider android:authorities="com.rovio.Nibblers.belvedere.attachments" android:exported="false" android:grantUriPermissions="true" android:name="com.zendesk.belvedere.BelvedereFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/belvedere_attachment_storage"/>
+        </provider>
+        <activity android:name="net.hockeyapp.android.FeedbackActivity" android:windowSoftInputMode="adjustResize|stateVisible"/>
+        <activity android:name="net.hockeyapp.android.PaintActivity"/>
+        <activity android:name="net.hockeyapp.android.LoginActivity"/>
+        <activity android:name="net.hockeyapp.android.ExpiryInfoActivity"/>
+    </application>
+</manifest>
